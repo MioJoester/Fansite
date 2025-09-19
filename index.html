@@ -2,9 +2,10 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
+    <title>ShadCN UI + Charts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>shadcn UI Inspired</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
     <style>
       body {
@@ -13,96 +14,152 @@
     </style>
   </head>
   <body class="bg-white text-black dark:bg-black dark:text-white min-h-screen flex flex-col items-center justify-start p-6 space-y-20">
-
+    
     <!-- Hero Section -->
     <main class="text-center max-w-2xl mt-20">
       <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
-        Beautifully designed components <br class="hidden sm:inline" /> built with Radix UI and Tailwind CSS.
+        Beautifully designed components <br class="hidden sm:inline" /> with Tailwind + Chart.js
       </h1>
       <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
-        Accessible. Customizable. Open Source.
+        Static previews + live charts.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="#get-started"
-          class="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
-        >
-          Get Started
-        </a>
-        <a
-          href="https://github.com/shadcn/ui"
-          target="_blank"
-          class="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-        >
-          GitHub
-        </a>
+        <a href="#" class="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-md font-medium hover:opacity-90 transition">Get Started</a>
+        <a href="https://github.com/shadcn/ui" target="_blank" class="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">GitHub</a>
       </div>
     </main>
 
-    <!-- Static Component Previews -->
-    <section class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Button -->
-      <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800">
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Button</p>
-        <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md">
-          Click me
-        </button>
+    <!-- Chart Section -->
+    <section class="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Bar Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Bar Chart</p>
+        <div class="aspect-[4/3]"><canvas id="barChart"></canvas></div>
       </div>
 
-      <!-- Input -->
-      <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800">
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Input</p>
-        <input
-          type="text"
-          placeholder="Enter text"
-          class="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400"
-        />
+      <!-- Pie Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Pie Chart</p>
+        <div class="aspect-[1]"><canvas id="pieChart"></canvas></div>
       </div>
 
-      <!-- Card -->
-      <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800">
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Card</p>
-        <div class="p-4 border rounded-md dark:border-zinc-700">
-          <h3 class="font-bold text-lg mb-2">Card Title</h3>
-          <p class="text-gray-600 dark:text-gray-400">This is a simple card component preview.</p>
-        </div>
+      <!-- Line Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Line Chart</p>
+        <div class="aspect-[4/3]"><canvas id="lineChart"></canvas></div>
       </div>
 
-      <!-- Dialog (Static) -->
-      <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800">
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Dialog</p>
-        <div class="bg-white dark:bg-zinc-800 p-4 rounded-md border border-zinc-300 dark:border-zinc-700">
-          <h4 class="font-semibold text-lg mb-2">Are you sure?</h4>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">You are about to delete this item.</p>
-          <div class="flex gap-2">
-            <button class="bg-red-600 text-white px-4 py-1 rounded">Delete</button>
-            <button class="border px-4 py-1 rounded dark:border-zinc-600">Cancel</button>
-          </div>
-        </div>
+      <!-- Radar Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Radar Chart</p>
+        <div class="aspect-[1]"><canvas id="radarChart"></canvas></div>
       </div>
 
-      <!-- Switch (Fake) -->
-      <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800">
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Switch</p>
-        <label class="inline-flex items-center cursor-pointer">
-          <input type="checkbox" class="sr-only peer" />
-          <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-zinc-700 peer-checked:bg-black dark:peer-checked:bg-white transition-all"></div>
-          <span class="ml-3 text-gray-700 dark:text-gray-300">Enable feature</span>
-        </label>
+      <!-- Doughnut Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Doughnut Chart</p>
+        <div class="aspect-[1]"><canvas id="doughnutChart"></canvas></div>
       </div>
 
-      <!-- Skeleton Loader -->
-      <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800">
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Skeleton</p>
-        <div class="space-y-2 animate-pulse">
-          <div class="h-4 bg-zinc-300 dark:bg-zinc-700 rounded w-3/4"></div>
-          <div class="h-4 bg-zinc-300 dark:bg-zinc-700 rounded w-1/2"></div>
-          <div class="h-4 bg-zinc-300 dark:bg-zinc-700 rounded w-full"></div>
-        </div>
+      <!-- Polar Area Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Polar Area Chart</p>
+        <div class="aspect-[1]"><canvas id="polarChart"></canvas></div>
+      </div>
+
+      <!-- Bubble Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Bubble Chart</p>
+        <div class="aspect-[4/3]"><canvas id="bubbleChart"></canvas></div>
+      </div>
+
+      <!-- Scatter Chart -->
+      <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow border dark:border-zinc-700">
+        <p class="mb-2 font-semibold">Scatter Chart</p>
+        <div class="aspect-[4/3]"><canvas id="scatterChart"></canvas></div>
       </div>
 
     </section>
 
+    <!-- Chart.js Script -->
+    <script>
+      const ctx = (id) => document.getElementById(id).getContext('2d');
+
+      new Chart(ctx('barChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+          datasets: [{ label: 'Sales', data: [12, 19, 3, 5], backgroundColor: '#6366f1' }],
+        },
+      });
+
+      new Chart(ctx('pieChart'), {
+        type: 'pie',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow'],
+          datasets: [{ data: [10, 20, 30], backgroundColor: ['#ef4444', '#3b82f6', '#facc15'] }],
+        },
+      });
+
+      new Chart(ctx('lineChart'), {
+        type: 'line',
+        data: {
+          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          datasets: [{ label: 'Visitors', data: [30, 40, 28, 60], borderColor: '#10b981', tension: 0.4 }],
+        },
+      });
+
+      new Chart(ctx('radarChart'), {
+        type: 'radar',
+        data: {
+          labels: ['Speed', 'Accuracy', 'Power', 'Endurance'],
+          datasets: [{ label: 'Athlete A', data: [20, 10, 30, 40], backgroundColor: 'rgba(59,130,246,0.3)', borderColor: '#3b82f6' }],
+        },
+      });
+
+      new Chart(ctx('doughnutChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Mobile', 'Desktop', 'Tablet'],
+          datasets: [{ data: [60, 30, 10], backgroundColor: ['#3b82f6', '#10b981', '#f59e0b'] }],
+        },
+      });
+
+      new Chart(ctx('polarChart'), {
+        type: 'polarArea',
+        data: {
+          labels: ['A', 'B', 'C', 'D'],
+          datasets: [{ data: [11, 16, 7, 3], backgroundColor: ['#ef4444', '#10b981', '#3b82f6', '#facc15'] }],
+        },
+      });
+
+      new Chart(ctx('bubbleChart'), {
+        type: 'bubble',
+        data: {
+          datasets: [{
+            label: 'Bubbles',
+            data: [
+              { x: 10, y: 20, r: 10 },
+              { x: 15, y: 10, r: 15 },
+              { x: 25, y: 30, r: 8 }
+            ],
+            backgroundColor: '#6366f1'
+          }]
+        },
+      });
+
+      new Chart(ctx('scatterChart'), {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            label: 'Scatter Dataset',
+            data: [{ x: -10, y: 0 }, { x: 0, y: 10 }, { x: 10, y: 5 }],
+            borderColor: '#f97316',
+            backgroundColor: '#f97316'
+          }]
+        }
+      });
+    </script>
   </body>
 </html>
