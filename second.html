@@ -3,31 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Component Showcase</title>
+  <title>Component Code</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/lucide@0.268.0/dist/lucide.min.js"></script>
 </head>
-<body class="bg-gray-100 dark:bg-zinc-900 p-10">
-  <h1 class="text-2xl font-bold mb-6 text-zinc-900 dark:text-zinc-100">Component Showcase</h1>
+<body class="bg-gray-100 dark:bg-zinc-900 p-10 space-y-6">
 
-  <div class="grid grid-cols-2 gap-6">
-    <!-- Left: Component Preview -->
-    <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 flex flex-col items-start justify-center">
-      <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Button Preview</p>
-      <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition">
-        Click me
-      </button>
-    </div>
+  <h1 class="text-2xl font-bold mb-6 text-zinc-900 dark:text-zinc-100">Component codes</h1>
 
-    <!-- Right: Code Preview -->
-    <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 overflow-auto">
-      <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Code</p>
-      <pre class="text-sm text-zinc-800 dark:text-zinc-200"><code>&lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
+  <div class="space-y-6">
+    <!-- Component Block Template -->
+    <div class="grid grid-cols-2 gap-6 items-start">
+      <!-- Left: Component Preview -->
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Button</p>
+        <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition">
+          Click me
+        </button>
+      </div>
+
+      <!-- Right: Code -->
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
+        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
+          <i data-lucide="clipboard"></i>
+        </button>
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+&lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
   &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Button&lt;/p&gt;
   &lt;button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md"&gt;
     Click me
   &lt;/button&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Input Component -->
+    <div class="grid grid-cols-2 gap-6 items-start">
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Input</p>
+        <input type="text" placeholder="Enter text" class="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400"/>
+      </div>
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
+        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
+          <i data-lucide="clipboard"></i>
+        </button>
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+&lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
+  &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Input&lt;/p&gt;
+  &lt;input type="text" placeholder="Enter text" class="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400"/&gt;
+&lt;/div&gt;
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Card Component -->
+    <div class="grid grid-cols-2 gap-6 items-start">
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Card</p>
+        <div class="p-4 border rounded-md dark:border-zinc-700">
+          <h3 class="font-bold text-lg mb-2">Card Title</h3>
+          <p class="text-gray-600 dark:text-gray-400">This is a simple card component preview.</p>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
+        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
+          <i data-lucide="clipboard"></i>
+        </button>
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+&lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
+  &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Card&lt;/p&gt;
+  &lt;div class="p-4 border rounded-md dark:border-zinc-700"&gt;
+    &lt;h3 class="font-bold text-lg mb-2"&gt;Card Title&lt;/h3&gt;
+    &lt;p class="text-gray-600 dark:text-gray-400"&gt;This is a simple card component preview.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Dialog Component -->
+    <div class="grid grid-cols-2 gap-6 items-start">
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Dialog</p>
+        <div class="bg-white dark:bg-zinc-800 p-4 rounded-md border border-zinc-300 dark:border-zinc-700">
+          <h4 class="font-semibold text-lg mb-2">Are you sure?</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">You are about to delete this item.</p>
+          <div class="flex gap-2">
+            <button class="bg-red-600 text-white px-4 py-1 rounded">Delete</button>
+            <button class="border px-4 py-1 rounded dark:border-zinc-600">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
+        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
+          <i data-lucide="clipboard"></i>
+        </button>
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+&lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
+  &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Dialog&lt;/p&gt;
+  &lt;div class="bg-white dark:bg-zinc-800 p-4 rounded-md border border-zinc-300 dark:border-zinc-700"&gt;
+    &lt;h4 class="font-semibold text-lg mb-2"&gt;Are you sure?&lt;/h4&gt;
+    &lt;p class="text-sm text-gray-600 dark:text-gray-400 mb-4"&gt;You are about to delete this item.&lt;/p&gt;
+    &lt;div class="flex gap-2"&gt;
+      &lt;button class="bg-red-600 text-white px-4 py-1 rounded"&gt;Delete&lt;/button&gt;
+      &lt;button class="border px-4 py-1 rounded dark:border-zinc-600"&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+      </div>
     </div>
   </div>
+
+  <script>
+    lucide.createIcons(); // Render Lucide icons
+
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.querySelector('code');
+      navigator.clipboard.writeText(codeBlock.innerText.trim()).then(() => {
+        button.innerHTML = '<i data-lucide="check"></i>';
+        lucide.createIcons();
+        setTimeout(() => {
+          button.innerHTML = '<i data-lucide="clipboard"></i>';
+          lucide.createIcons();
+        }, 1500);
+      });
+    }
+  </script>
 </body>
 </html>
