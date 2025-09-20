@@ -395,6 +395,60 @@
     </button>
   </div>
 
+
+
+      <div class="h-72 w-48 rounded-md border border-zinc-200 dark:border-zinc-700 overflow-y-auto bg-white dark:bg-zinc-800 shadow-sm">
+    <div class="p-4">
+      <h4 class="mb-4 text-sm font-medium leading-none text-zinc-700 dark:text-zinc-200">Tags</h4>
+
+      <!-- Tags list -->
+      <div class="space-y-2">
+        <!-- JS will populate these -->
+        <div id="tagsContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Custom thin scrollbar */
+    .h-72::-webkit-scrollbar {
+      width: 6px;
+    }
+    .h-72::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .h-72::-webkit-scrollbar-thumb {
+      background-color: rgba(107, 114, 128, 0.4); /* zinc-500/40 */
+      border-radius: 9999px;
+    }
+    .h-72:hover::-webkit-scrollbar-thumb {
+      background-color: rgba(107, 114, 128, 0.7); /* zinc-500/70 */
+    }
+  </style>
+
+  <script>
+    // Generate fake tags like in your demo
+    const tags = Array.from({ length: 50 }).map(
+      (_, i, a) => `v1.2.0-beta.${a.length - i}`
+    );
+
+    const container = document.getElementById("tagsContainer");
+
+    tags.forEach((tag, index) => {
+      const div = document.createElement("div");
+      div.className = "text-sm text-zinc-700 dark:text-zinc-300";
+      div.textContent = tag;
+      container.appendChild(div);
+
+      // Add separator except for last one
+      if (index < tags.length - 1) {
+        const sep = document.createElement("div");
+        sep.className = "h-px bg-zinc-200 dark:bg-zinc-700 my-2";
+        container.appendChild(sep);
+      }
+    });
+  </script>
+    
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
