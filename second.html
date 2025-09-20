@@ -12,9 +12,9 @@
   <h1 class="text-2xl font-bold mb-6 text-zinc-900 dark:text-zinc-100">Component codes</h1>
 
   <div class="space-y-6">
-    <!-- Component Block Template -->
+    <!-- Button Component -->
     <div class="grid grid-cols-2 gap-6 items-start">
-      <!-- Left: Component Preview -->
+      <!-- Preview -->
       <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
         <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Button</p>
         <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition">
@@ -22,21 +22,25 @@
         </button>
       </div>
 
-      <!-- Right: Code -->
-      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
-        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
-          <i data-lucide="clipboard"></i>
-        </button>
-        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+      <!-- Code with hardcoded copy button -->
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto rounded-md bg-gray-50 dark:bg-zinc-900 p-4 relative">
+          <button class="absolute top-2 right-2 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200" onclick="copyCode(this)">
+            <i data-lucide="clipboard"></i>
+          </button>
+<code>
 &lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
   &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Button&lt;/p&gt;
   &lt;button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md"&gt;
     Click me
   &lt;/button&gt;
 &lt;/div&gt;
-        </code></pre>
+</code>
+        </pre>
       </div>
     </div>
+
+    <!-- Repeat for Input, Card, Dialog components with same copy button inside <pre> -->
 
     <!-- Input Component -->
     <div class="grid grid-cols-2 gap-6 items-start">
@@ -44,16 +48,18 @@
         <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Input</p>
         <input type="text" placeholder="Enter text" class="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400"/>
       </div>
-      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
-        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
-          <i data-lucide="clipboard"></i>
-        </button>
-        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto rounded-md bg-gray-50 dark:bg-zinc-900 p-4 relative">
+          <button class="absolute top-2 right-2 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200" onclick="copyCode(this)">
+            <i data-lucide="clipboard"></i>
+          </button>
+<code>
 &lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
   &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Input&lt;/p&gt;
   &lt;input type="text" placeholder="Enter text" class="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400"/&gt;
 &lt;/div&gt;
-        </code></pre>
+</code>
+        </pre>
       </div>
     </div>
 
@@ -66,11 +72,12 @@
           <p class="text-gray-600 dark:text-gray-400">This is a simple card component preview.</p>
         </div>
       </div>
-      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
-        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
-          <i data-lucide="clipboard"></i>
-        </button>
-        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto rounded-md bg-gray-50 dark:bg-zinc-900 p-4 relative">
+          <button class="absolute top-2 right-2 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200" onclick="copyCode(this)">
+            <i data-lucide="clipboard"></i>
+          </button>
+<code>
 &lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
   &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Card&lt;/p&gt;
   &lt;div class="p-4 border rounded-md dark:border-zinc-700"&gt;
@@ -78,7 +85,8 @@
     &lt;p class="text-gray-600 dark:text-gray-400"&gt;This is a simple card component preview.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-        </code></pre>
+</code>
+        </pre>
       </div>
     </div>
 
@@ -95,11 +103,12 @@
           </div>
         </div>
       </div>
-      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 relative">
-        <button class="absolute top-4 right-4 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700" onclick="copyCode(this)">
-          <i data-lucide="clipboard"></i>
-        </button>
-        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto"><code>
+      <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700">
+        <pre class="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto rounded-md bg-gray-50 dark:bg-zinc-900 p-4 relative">
+          <button class="absolute top-2 right-2 p-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200" onclick="copyCode(this)">
+            <i data-lucide="clipboard"></i>
+          </button>
+<code>
 &lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
   &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Dialog&lt;/p&gt;
   &lt;div class="bg-white dark:bg-zinc-800 p-4 rounded-md border border-zinc-300 dark:border-zinc-700"&gt;
@@ -111,16 +120,17 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-        </code></pre>
+</code>
+        </pre>
       </div>
     </div>
   </div>
 
   <script>
-    lucide.createIcons(); // Render Lucide icons
+    lucide.createIcons(); // Render icons
 
     function copyCode(button) {
-      const codeBlock = button.nextElementSibling.querySelector('code');
+      const codeBlock = button.closest('pre').querySelector('code');
       navigator.clipboard.writeText(codeBlock.innerText.trim()).then(() => {
         button.innerHTML = '<i data-lucide="check"></i>';
         lucide.createIcons();
@@ -131,5 +141,6 @@
       });
     }
   </script>
+
 </body>
 </html>
