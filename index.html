@@ -18,6 +18,17 @@
       body {
         font-family: 'Inter', sans-serif;
       }
+
+          /* Hide scrollbar but keep scroll functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+      
     </style>
   </head>
   <body class="bg-white text-black dark:bg-black dark:text-white min-h-screen flex flex-col items-center justify-start p-6 space-y-20">
@@ -146,7 +157,7 @@
   </div>
 </section>
 
-  <h2 class="text-lg font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center">Calender Component</h2>
+  <h2 class="text-lg font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center">Calendar Component</h2>
 
 <!-- Static Calendar -->
 <section id=="cals" class="max-w-3xl w-full bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800 mb-16">
@@ -332,6 +343,35 @@
     </pre>
   </div>
 </section>
+
+     <h2 class="text-l font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center"> Carousel component</h2>
+
+    <div class="relative w-full max-w-4xl">
+    <!-- Track -->
+    <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar">
+      <!-- Square Item -->
+      <div class="snap-center shrink-0 w-64 h-64 rounded-xl shadow-md flex items-center justify-center 
+                  bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+        <span class="text-xl font-bold text-zinc-700 dark:text-zinc-200">1</span>
+      </div>
+
+      <div class="snap-center shrink-0 w-64 h-64 rounded-xl shadow-md flex items-center justify-center 
+                  bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+        <span class="text-xl font-bold text-zinc-700 dark:text-zinc-200">2</span>
+      </div>
+
+      <div class="snap-center shrink-0 w-64 h-64 rounded-xl shadow-md flex items-center justify-center 
+                  bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+        <span class="text-xl font-bold text-zinc-700 dark:text-zinc-200">3</span>
+      </div>
+
+      <div class="snap-center shrink-0 w-64 h-64 rounded-xl shadow-md flex items-center justify-center 
+                  bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+        <span class="text-xl font-bold text-zinc-700 dark:text-zinc-200">4</span>
+      </div>
+    </div>
+  </div>
+
 
 <script>
   lucide.createIcons(); // Load all icons
