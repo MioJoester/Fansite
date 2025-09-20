@@ -304,20 +304,12 @@
 </section>
 
 
-<h2 class="text-l font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center"> Code block component</h2>
-<section class="max-w-2xl w-full mx-auto mt-20 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 relative">
+      <h2 class="text-l font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center"> Code block component</h2>
+<section class="max-w-2xl w-full mx-auto mt-20 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
 
-  <!-- Theme Toggle Button -->
-  <button 
-    onclick="toggleTheme()" 
-    class="absolute top-3 left-3 p-1.5 rounded-md bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition"
-    aria-label="Toggle theme"
-  >
-    <i id="theme-icon" data-lucide="sun" class="w-4 h-4 text-zinc-600 dark:text-zinc-300"></i>
-  </button>
 
   <!-- Code Block Wrapper -->
-  <div class="relative mt-8">
+  <div class="relative">
     <!-- Copy Button -->
     <button 
       onclick="copyCode(this)" 
@@ -340,34 +332,6 @@
     </pre>
   </div>
 </section>
-
-<script>
-  // Lucide icon refresh
-  lucide.createIcons();
-
-  // Toggle theme
-  function toggleTheme() {
-    const html = document.documentElement;
-    const themeIcon = document.getElementById("theme-icon");
-
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      themeIcon.setAttribute("data-lucide", "sun");
-    } else {
-      html.classList.add("dark");
-      themeIcon.setAttribute("data-lucide", "moon");
-    }
-
-    // Refresh Lucide icons
-    lucide.createIcons();
-  }
-
-  // Dummy copy function (replace with your own)
-  function copyCode(button) {
-    alert("Code copied!");
-  }
-</script>
-
 
 <script>
   lucide.createIcons(); // Load all icons
