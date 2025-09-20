@@ -1,275 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <meta charset="UTF-8" />
-    <title>ShadCN UI + Charts</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-zinc-900 p-10">
+  <h1 class="text-2xl font-bold mb-6 text-zinc-900 dark:text-zinc-100">Component Showcase</h1>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-javascript.min.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-
-      /* Hide scrollbar but keep scroll functionality */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      .badge {
-        @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold
-          bg-zinc-200 text-zinc-800 dark:bg-zinc-700 dark:text-zinc-100;
-      }
-
-      .badge-secondary {
-        @apply bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-100;
-      }
-      .badge-destructive {
-        @apply bg-red-500 text-white dark:bg-red-600;
-      }
-      .badge-outline {
-        @apply border border-zinc-300 text-zinc-800 dark:border-zinc-700 dark:text-zinc-200 bg-transparent;
-      }
-
-      .toggle-btn {
-        @apply absolute top-3 right-10 p-1.5 rounded-md bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition cursor-pointer text-xs;
-      }
-    </style>
-  </head>
-  <body
-    class="bg-white text-black dark:bg-black dark:text-white min-h-screen flex flex-col items-center justify-start p-6 space-y-20"
-  >
-
-    <!-- Navigation Bar -->
-<nav class="w-full bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <!-- Logo / Brand -->
-    <a href="#" class="text-2xl font-bold text-black dark:text-white">MyUI</a>
-
-    <!-- Nav Links -->
-    <ul class="hidden md:flex gap-6 text-zinc-800 dark:text-zinc-200 font-medium">
-      <li><a href="#hero" class="hover:underline">Home</a></li>
-      <li><a href="#components" class="hover:underline">Components</a></li>
-      <li><a href="#charts" class="hover:underline">Charts</a></li>
-      <li><a href="#about" class="hover:underline">About</a></li>
-    </ul>
-
-    <!-- Right side: Theme Toggle + Mobile Menu -->
-    <div class="flex items-center gap-4">
-      <!-- Theme Toggle Button -->
-      <button
-        id="theme-toggle"
-        class="p-2 rounded-md bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition"
-        aria-label="Toggle Theme"
-      >
-        <!-- Icon placeholder; we will swap with JS -->
-        <svg id="theme-icon" class="w-5 h-5 text-zinc-800 dark:text-zinc-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.485-8.485l-.707.707M4.222 4.222l-.707.707M21 12h-1M4 12H3m16.485 4.485l-.707-.707M4.222 19.778l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-        </svg>
-      </button>
-
-      <!-- Mobile menu toggle -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition">
-        <svg class="w-6 h-6 text-zinc-800 dark:text-zinc-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+  <div class="grid grid-cols-2 gap-6">
+    <!-- Left: Component Preview -->
+    <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 flex flex-col items-start justify-center">
+      <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Button Preview</p>
+      <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition">
+        Click me
       </button>
     </div>
+
+    <!-- Right: Code Preview -->
+    <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-700 overflow-auto">
+      <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Code</p>
+      <pre class="text-sm text-zinc-800 dark:text-zinc-200"><code>&lt;div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800"&gt;
+  &lt;p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200"&gt;Button&lt;/p&gt;
+  &lt;button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md"&gt;
+    Click me
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
   </div>
-
-  <!-- Mobile Menu -->
-  <ul id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-6 pb-4 text-zinc-800 dark:text-zinc-200 font-medium">
-    <li><a href="#hero" class="block py-2 hover:underline">Home</a></li>
-    <li><a href="#components" class="block py-2 hover:underline">Components</a></li>
-    <li><a href="#charts" class="block py-2 hover:underline">Charts</a></li>
-    <li><a href="#about" class="block py-2 hover:underline">About</a></li>
-  </ul>
-</nav>
-
-<script>
-  // Theme Toggle Logic
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-
-  function setTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }
-
-  // Initialize theme based on preference
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    // default to light
-    setTheme('light');
-  }
-
-  themeToggleBtn.addEventListener('click', () => {
-    if (document.documentElement.classList.contains('dark')) {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
-  });
-
-  // Mobile Menu Toggle
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
-
-<style>
-  body {
-    padding-top: 72px; /* to prevent content being hidden under fixed navbar */
-  }
-</style>
-
-    <!-- Hero Section -->
-    <main class="text-center max-w-2xl mt-20">
-      <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
-        Beautifully designed components <br class="hidden sm:inline" />
-        with Tailwind + Chart.js + Shadcn
-      </h1>
-      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
-        Static previews + live charts.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="#"
-          class="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
-          >Get Started</a
-        >
-        <a
-          href="https://github.com/shadcn/ui"
-          target="_blank"
-          class="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >GitHub</a
-        >
-      </div>
-    </main>
-
-    <h2
-      class="text-lg font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center"
-    >
-      UI Components
-    </h2>
-
-    <section
-      class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
-      <!-- Button Component -->
-      <div
-        class="component-wrapper bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800 relative"
-        data-code="<button class='bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md'>Click me</button>"
-      >
-        <button
-          class="toggle-btn"
-          onclick="toggleCode(this)"
-        >
-          Code
-        </button>
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Button</p>
-        <div class="preview">
-          <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md">
-            Click me
-          </button>
-        </div>
-        <pre class="hidden rounded-lg bg-white text-sm overflow-x-auto p-4 border border-zinc-200 dark:border-zinc-700">
-<code class="language-html">&lt;button class='bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md'&gt;Click me&lt;/button&gt;</code>
-        </pre>
-      </div>
-
-      <!-- Input Component -->
-      <div
-        class="component-wrapper bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800 relative"
-        data-code="<input type='text' placeholder='Enter text' class='w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400'/>"
-      >
-        <button
-          class="toggle-btn"
-          onclick="toggleCode(this)"
-        >
-          Code
-        </button>
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Input</p>
-        <div class="preview">
-          <input
-            type="text"
-            placeholder="Enter text"
-            class="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400"
-          />
-        </div>
-        <pre class="hidden rounded-lg bg-white text-sm overflow-x-auto p-4 border border-zinc-200 dark:border-zinc-700">
-<code class="language-html">&lt;input type='text' placeholder='Enter text' class='w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-800 text-black dark:text-white placeholder:text-gray-400'/&gt;</code>
-        </pre>
-      </div>
-
-      <!-- Card Component -->
-      <div
-        class="component-wrapper bg-white dark:bg-zinc-900 p-6 rounded-xl shadow border border-zinc-200 dark:border-zinc-800 relative"
-        data-code="&lt;div class='p-4 border rounded-md dark:border-zinc-700'&gt;&lt;h3 class='font-bold text-lg mb-2'&gt;Card Title&lt;/h3&gt;&lt;p class='text-gray-600 dark:text-gray-400'&gt;This is a simple card component preview.&lt;/p&gt;&lt;/div&gt;"
-      >
-        <button
-          class="toggle-btn"
-          onclick="toggleCode(this)"
-        >
-          Code
-        </button>
-        <p class="font-semibold mb-4 text-zinc-800 dark:text-zinc-200">Card</p>
-        <div class="preview">
-          <div class="p-4 border rounded-md dark:border-zinc-700">
-            <h3 class="font-bold text-lg mb-2">Card Title</h3>
-            <p class="text-gray-600 dark:text-gray-400">This is a simple card component preview.</p>
-          </div>
-        </div>
-        <pre class="hidden rounded-lg bg-white text-sm overflow-x-auto p-4 border border-zinc-200 dark:border-zinc-700">
-<code class="language-html">&lt;div class='p-4 border rounded-md dark:border-zinc-700'&gt;&lt;h3 class='font-bold text-lg mb-2'&gt;Card Title&lt;/h3&gt;&lt;p class='text-gray-600 dark:text-gray-400'&gt;This is a simple card component preview.&lt;/p&gt;&lt;/div&gt;</code>
-        </pre>
-      </div>
-
-      <!-- More components... add similar structure for Dialog, Switch, Skeleton, Avatar, Calendar, Charts, Auth, Menu etc. -->
-
-    </section>
-
-    <script>
-      // Toggle between preview and code
-      function toggleCode(button) {
-        const wrapper = button.closest('.component-wrapper');
-        const preview = wrapper.querySelector('.preview');
-        const codeBlock = wrapper.querySelector('pre');
-
-        preview.classList.toggle('hidden');
-        codeBlock.classList.toggle('hidden');
-
-        Prism.highlightElement(codeBlock.querySelector('code'));
-      }
-
-      lucide.createIcons();
-    </script>
-  </body>
+</body>
 </html>
