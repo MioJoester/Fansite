@@ -470,112 +470,167 @@
     <h2 class="text-l font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center"> Menu components </h2>
     
 
-<section class="w-full border-b border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900">
-  <nav class="flex space-x-6 px-4 text-sm">
+<section class="w-full border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+  <div class="flex items-center space-x-4 px-4">
     <!-- File Menu -->
     <div class="relative group">
-      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+      <button class="px-3 py-2 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded">
         File
       </button>
       <div
-        class="absolute left-0 mt-1 hidden w-48 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+        class="absolute bottom-full left-0 mb-1 hidden min-w-[180px] rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg group-hover:block"
       >
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
-          <span>New Tab</span> <span class="text-zinc-500">⌘T</span>
-        </div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
-          <span>New Window</span> <span class="text-zinc-500">⌘N</span>
-        </div>
-        <div class="px-3 py-2 text-zinc-400 dark:text-zinc-500">New Incognito Window</div>
-        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
+        <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          New Tab <span class="text-zinc-400">⌘T</span>
+        </button>
+        <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          New Window <span class="text-zinc-400">⌘N</span>
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm text-zinc-400 cursor-not-allowed">
+          New Incognito Window
+        </button>
+        <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+
         <!-- Submenu -->
         <div class="relative group/sub">
-          <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
-            Share <span class="text-zinc-500">›</span>
-          </div>
+          <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+            Share <span class="text-zinc-400">▶</span>
+          </button>
           <div
-            class="absolute top-0 left-full ml-1 hidden w-40 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover/sub:block"
+            class="absolute bottom-full left-full ml-1 mb-1 hidden w-40 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg group-hover/sub:block"
           >
-            <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Email link</div>
-            <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Messages</div>
-            <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Notes</div>
+            <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              Email link
+            </button>
+            <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              Messages
+            </button>
+            <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              Notes
+            </button>
           </div>
         </div>
-        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
-          <span>Print...</span> <span class="text-zinc-500">⌘P</span>
-        </div>
+
+        <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+        <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Print... <span class="text-zinc-400">⌘P</span>
+        </button>
       </div>
     </div>
 
     <!-- Edit Menu -->
     <div class="relative group">
-      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+      <button class="px-3 py-2 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded">
         Edit
       </button>
       <div
-        class="absolute left-0 mt-1 hidden w-48 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+        class="absolute bottom-full left-0 mb-1 hidden min-w-[180px] rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg group-hover:block"
       >
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
-          <span>Undo</span> <span class="text-zinc-500">⌘Z</span>
+        <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Undo <span class="text-zinc-400">⌘Z</span>
+        </button>
+        <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Redo <span class="text-zinc-400">⇧⌘Z</span>
+        </button>
+        <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+
+        <!-- Submenu -->
+        <div class="relative group/sub">
+          <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+            Find <span class="text-zinc-400">▶</span>
+          </button>
+          <div
+            class="absolute bottom-full left-full ml-1 mb-1 hidden w-44 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg group-hover/sub:block"
+          >
+            <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              Search the web
+            </button>
+            <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+            <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              Find...
+            </button>
+            <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              Find Next
+            </button>
+            <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              Find Previous
+            </button>
+          </div>
         </div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
-          <span>Redo</span> <span class="text-zinc-500">⇧⌘Z</span>
-        </div>
-        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Cut</div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Copy</div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Paste</div>
+
+        <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Cut
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Copy
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Paste
+        </button>
       </div>
     </div>
 
     <!-- View Menu -->
     <div class="relative group">
-      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+      <button class="px-3 py-2 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded">
         View
       </button>
       <div
-        class="absolute left-0 mt-1 hidden w-56 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+        class="absolute bottom-full left-0 mb-1 hidden min-w-[200px] rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg group-hover:block"
       >
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex items-center gap-2">
-          <input type="checkbox" checked class="accent-blue-500" /> Always Show Bookmarks Bar
-        </div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex items-center gap-2">
-          <input type="checkbox" class="accent-blue-500" /> Always Show Full URLs
-        </div>
-        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
-          <span>Reload</span> <span class="text-zinc-500">⌘R</span>
-        </div>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Always Show Bookmarks Bar
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Always Show Full URLs
+        </button>
+        <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+        <button class="flex justify-between w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Reload <span class="text-zinc-400">⌘R</span>
+        </button>
+        <button class="flex justify-between w-full text-left px-3 py-2 text-sm text-zinc-400 cursor-not-allowed">
+          Force Reload <span class="text-zinc-400">⇧⌘R</span>
+        </button>
+        <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Toggle Fullscreen
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Hide Sidebar
+        </button>
       </div>
     </div>
 
     <!-- Profiles Menu -->
     <div class="relative group">
-      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+      <button class="px-3 py-2 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded">
         Profiles
       </button>
       <div
-        class="absolute left-0 mt-1 hidden w-48 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+        class="absolute bottom-full left-0 mb-1 hidden min-w-[180px] rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg group-hover:block"
       >
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">
-          <input type="radio" name="profile" checked class="accent-blue-500" /> Andy
-        </div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">
-          <input type="radio" name="profile" class="accent-blue-500" /> Benoit
-        </div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">
-          <input type="radio" name="profile" class="accent-blue-500" /> Luis
-        </div>
-        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Edit…</div>
-        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Add Profile…</div>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Andy
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm bg-zinc-100 dark:bg-zinc-800">
+          Benoit
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Luis
+        </button>
+        <div class="border-t border-zinc-200 dark:border-zinc-700 my-1"></div>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Edit...
+        </button>
+        <button class="block w-full text-left px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          Add Profile...
+        </button>
       </div>
     </div>
-  </nav>
+  </div>
 </section>
 
-    
 
     
 <script>
