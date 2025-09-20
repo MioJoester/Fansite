@@ -467,6 +467,113 @@
     });
   </script>
 
+    <h2 class="text-l font-bold text-zinc-800 dark:text-zinc-100 mb-4 text-center"> Menu components </h2>
+    
+
+<section class="w-full border-b border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900">
+  <nav class="flex space-x-6 px-4 text-sm">
+    <!-- File Menu -->
+    <div class="relative group">
+      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+        File
+      </button>
+      <div
+        class="absolute left-0 mt-1 hidden w-48 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+      >
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
+          <span>New Tab</span> <span class="text-zinc-500">⌘T</span>
+        </div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
+          <span>New Window</span> <span class="text-zinc-500">⌘N</span>
+        </div>
+        <div class="px-3 py-2 text-zinc-400 dark:text-zinc-500">New Incognito Window</div>
+        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
+        <!-- Submenu -->
+        <div class="relative group/sub">
+          <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
+            Share <span class="text-zinc-500">›</span>
+          </div>
+          <div
+            class="absolute top-0 left-full ml-1 hidden w-40 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover/sub:block"
+          >
+            <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Email link</div>
+            <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Messages</div>
+            <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Notes</div>
+          </div>
+        </div>
+        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
+          <span>Print...</span> <span class="text-zinc-500">⌘P</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Menu -->
+    <div class="relative group">
+      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+        Edit
+      </button>
+      <div
+        class="absolute left-0 mt-1 hidden w-48 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+      >
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
+          <span>Undo</span> <span class="text-zinc-500">⌘Z</span>
+        </div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
+          <span>Redo</span> <span class="text-zinc-500">⇧⌘Z</span>
+        </div>
+        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Cut</div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Copy</div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Paste</div>
+      </div>
+    </div>
+
+    <!-- View Menu -->
+    <div class="relative group">
+      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+        View
+      </button>
+      <div
+        class="absolute left-0 mt-1 hidden w-56 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+      >
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex items-center gap-2">
+          <input type="checkbox" checked class="accent-blue-500" /> Always Show Bookmarks Bar
+        </div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex items-center gap-2">
+          <input type="checkbox" class="accent-blue-500" /> Always Show Full URLs
+        </div>
+        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 flex justify-between">
+          <span>Reload</span> <span class="text-zinc-500">⌘R</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profiles Menu -->
+    <div class="relative group">
+      <button class="py-2 text-zinc-700 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white">
+        Profiles
+      </button>
+      <div
+        class="absolute left-0 mt-1 hidden w-48 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-md group-hover:block"
+      >
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">
+          <input type="radio" name="profile" checked class="accent-blue-500" /> Andy
+        </div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">
+          <input type="radio" name="profile" class="accent-blue-500" /> Benoit
+        </div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">
+          <input type="radio" name="profile" class="accent-blue-500" /> Luis
+        </div>
+        <div class="my-1 border-t border-zinc-200 dark:border-zinc-700"></div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Edit…</div>
+        <div class="px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700">Add Profile…</div>
+      </div>
+    </div>
+  </nav>
+</section>
 
     
 
