@@ -632,26 +632,141 @@
 </section>
 
 
-     <div class="relative w-[280px]">
-    <label for="date-picker" class="block text-sm font-medium text-gray-700 mb-1">Select a date</label>
-    <div class="relative">
-      <input
-        type="date"
-        id="date-picker"
-        class="peer block w-full appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pl-10 text-left text-gray-900 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-        placeholder="Pick a date"
-      />
-      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
-        <!-- Calendar icon (SVG) -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" />
-        </svg>
+   <div class="relative inline-block text-left">
+    <button id="datepicker-trigger"
+      class="flex items-center w-[280px] justify-start px-4 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-500" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" />
+      </svg>
+      <span id="datepicker-label" class="text-gray-500">Pick a date</span>
+    </button>
+
+    <!-- Popup calendar -->
+    <div id="datepicker-popup"
+         class="absolute mt-2 hidden bg-white border border-gray-300 rounded-lg shadow-lg p-4 z-10"
+    >
+      <div class="flex items-center justify-between mb-2">
+        <button id="prev-month" class="p-1 hover:bg-gray-200 rounded">&lt;</button>
+        <div id="month-year" class="font-medium"></div>
+        <button id="next-month" class="p-1 hover:bg-gray-200 rounded">&gt;</button>
+      </div>
+      <div id="calendar-grid" class="grid grid-cols-7 gap-1">
+        <!-- Day names -->
+        <div class="text-xs font-medium text-gray-500 uppercase">Sun</div>
+        <div class="text-xs font-medium text-gray-500 uppercase">Mon</div>
+        <div class="text-xs font-medium text-gray-500 uppercase">Tue</div>
+        <div class="text-xs font-medium text-gray-500 uppercase">Wed</div>
+        <div class="text-xs font-medium text-gray-500 uppercase">Thu</div>
+        <div class="text-xs font-medium text-gray-500 uppercase">Fri</div>
+        <div class="text-xs font-medium text-gray-500 uppercase">Sat</div>
+        <!-- Dates will go here -->
       </div>
     </div>
   </div>
 
+  <script>
+    // Utility
+    function formatDate(date) {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return date.toLocaleDateString(undefined, options);
+    }
+
+    // State
+    let currentDate = new Date();   // controls month/year shown
+    let selectedDate = null;
+
+    // Elements
+    const trigger = document.getElementById('datepicker-trigger');
+    const popup = document.getElementById('datepicker-popup');
+    const label = document.getElementById('datepicker-label');
+    const monthYear = document.getElementById('month-year');
+    const calendarGrid = document.getElementById('calendar-grid');
+    const prevBtn = document.getElementById('prev-month');
+    const nextBtn = document.getElementById('next-month');
+
+    // Show / hide popup
+    trigger.addEventListener('click', () => {
+      popup.classList.toggle('hidden');
+      renderCalendar();
+    });
+
+    // change month
+    prevBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar();
+    });
+
+    function renderCalendar() {
+      // Clear previous dates (except day-names)
+      // Remove all child nodes past the first 7 (day names)
+      const children = Array.from(calendarGrid.children);
+      children.slice(7).forEach(n => n.remove());
+
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+
+      // Set heading
+      const monthNames = [
+        'January','February','March','April','May','June',
+        'July','August','September','October','November','December'
+      ];
+      monthYear.textContent = `${monthNames[month]} ${year}`;
+
+      // Determine starting day of the month
+      const firstDay = new Date(year, month, 1).getDay(); // 0 = Sunday
+      const daysInMonth = new Date(year, month+1, 0).getDate();
+
+      // Add blank slots
+      for (let i = 0; i < firstDay; i++) {
+        const blank = document.createElement('div');
+        blank.textContent = '';
+        calendarGrid.appendChild(blank);
+      }
+
+      // Add date cells
+      for (let dateNum = 1; dateNum <= daysInMonth; dateNum++) {
+        const d = document.createElement('div');
+        d.textContent = dateNum;
+        d.className = "py-1 text-center rounded hover:bg-blue-100 cursor-pointer";
+        if (selectedDate &&
+            selectedDate.getFullYear() === year &&
+            selectedDate.getMonth() === month &&
+            selectedDate.getDate() === dateNum) {
+          d.classList.add('bg-blue-500','text-white');
+        }
+        d.addEventListener('click', () => {
+          selectedDate = new Date(year, month, dateNum);
+          label.textContent = formatDate(selectedDate);
+          popup.classList.add('hidden');
+        });
+        calendarGrid.appendChild(d);
+      }
+    }
+
+    // Hide the popup if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!popup.contains(e.target) && !trigger.contains(e.target)) {
+        popup.classList.add('hidden');
+      }
+    });
+
+    // Initial render
+    renderCalendar();
+  </script>
+
+
+
+    
+
+    
 <script>
   function togglePopover() {
     document.getElementById("popoverMenu").classList.toggle("hidden");
